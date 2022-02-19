@@ -42,8 +42,13 @@
         "build": {
           "options": {
             "tsConfig": "tsconfig.json",
-            "styles": [],
-            "scripts": []
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "./projects/ui-lib/styles.scss"
+            ],
+            "scripts": [
+              
+            ]
           }
         }
       }

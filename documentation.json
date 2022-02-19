@@ -473,7 +473,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<!-- <mat-button-toggle-group name=\"fontStyle\" aria-label=\"Font Style\">\n    <mat-button-toggle value=\"bold\">Bold</mat-button-toggle>\n    <mat-button-toggle value=\"italic\">Italic</mat-button-toggle>\n    <mat-button-toggle value=\"underline\">Underline</mat-button-toggle>\n  </mat-button-toggle-group> -->\n"
+            "templateData": "<mat-button-toggle-group name=\"fontStyle\" aria-label=\"Font Style\">\n    <mat-button-toggle value=\"bold\">Bold</mat-button-toggle>\n    <mat-button-toggle value=\"italic\">Italic</mat-button-toggle>\n    <mat-button-toggle value=\"underline\">Underline</mat-button-toggle>\n  </mat-button-toggle-group>\n"
         },
         {
             "name": "PageComponent",
@@ -559,13 +559,13 @@
     "modules": [
         {
             "name": "UiLibModule",
-            "id": "module-UiLibModule-1034f48a34875386666e41a9674c53726012cfca50297f7a70a137b41c85249e11237c9c78cfc04a52f4e6c2d5a5433e585e8535508603990326393767def60c",
+            "id": "module-UiLibModule-48b033bb389ccdadc0284b7b942b86adf09f1deda68831cd67664e710735aff72cc1c833d7e8dbbbbf0ca6c80f7da510fcb7b60dac37a2aaebc1e4f3c18577b7",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ui-lib/src/lib/ui-lib.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { ButtonComponentComponent } from './components/button-component/button-component.component';\nimport { InputComponent } from './components/input/input.component';\nimport { CustomCompComponent } from './components/custom-comp/custom-comp.component';\nimport { NavbarComponent } from './components/navbar/navbar.component';\n\n@NgModule({\n  declarations: [\n    ButtonComponentComponent,\n    InputComponent,\n    CustomCompComponent,\n    NavbarComponent\n  ],\n  imports: [\n  ],\n  exports: [\n    ButtonComponentComponent,\n    InputComponent,\n    CustomCompComponent,\n    NavbarComponent\n  ]\n})\nexport class UiLibModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { ButtonComponentComponent } from './components/button-component/button-component.component';\nimport { InputComponent } from './components/input/input.component';\nimport { CustomCompComponent } from './components/custom-comp/custom-comp.component';\nimport { NavbarComponent } from './components/navbar/navbar.component';\nimport { MatButtonToggleModule } from '@angular/material/button-toggle';\n\n@NgModule({\n  declarations: [\n    ButtonComponentComponent,\n    InputComponent,\n    CustomCompComponent,\n    NavbarComponent\n  ],\n  imports: [\n    MatButtonToggleModule\n  ],\n  exports: [\n    ButtonComponentComponent,\n    InputComponent,\n    CustomCompComponent,\n    NavbarComponent,\n    MatButtonToggleModule\n  ]\n})\nexport class UiLibModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -646,7 +646,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui-lib/src/lib/components/input/input.stories.ts",
+                "file": "projects/ui-lib/src/lib/components/navbar/navbar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -666,7 +666,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui-lib/src/lib/components/navbar/navbar.stories.ts",
+                "file": "projects/ui-lib/src/lib/components/input/input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -686,7 +686,7 @@
                 "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Page.stories.ts",
+                "file": "stories/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -696,16 +696,6 @@
                 "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -717,6 +707,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -765,6 +765,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Header>",
+                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -785,16 +795,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ui-lib/src/lib/components/button-component/my-lib.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -805,11 +805,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui-lib/src/lib/components/input/input.stories.ts",
+                "file": "projects/ui-lib/src/lib/components/navbar/navbar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<InputComponent>",
-                "defaultValue": "(args: InputComponent) => ({\n  props: args,\n})"
+                "type": "Story<NavbarComponent>",
+                "defaultValue": "(args: NavbarComponent) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -825,11 +825,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui-lib/src/lib/components/navbar/navbar.stories.ts",
+                "file": "projects/ui-lib/src/lib/components/input/input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<NavbarComponent>",
-                "defaultValue": "(args: NavbarComponent) => ({\n  props: args,\n})"
+                "type": "Story<InputComponent>",
+                "defaultValue": "(args: InputComponent) => ({\n  props: args,\n})"
             }
         ],
         "functions": [],
@@ -879,12 +879,12 @@
                     "defaultValue": "(args: ButtonComponentComponent) => ({\n  props: args,\n})"
                 }
             ],
-            "projects/ui-lib/src/lib/components/input/input.stories.ts": [
+            "projects/ui-lib/src/lib/components/navbar/navbar.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ui-lib/src/lib/components/input/input.stories.ts",
+                    "file": "projects/ui-lib/src/lib/components/navbar/navbar.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -894,11 +894,11 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ui-lib/src/lib/components/input/input.stories.ts",
+                    "file": "projects/ui-lib/src/lib/components/navbar/navbar.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<InputComponent>",
-                    "defaultValue": "(args: InputComponent) => ({\n  props: args,\n})"
+                    "type": "Story<NavbarComponent>",
+                    "defaultValue": "(args: NavbarComponent) => ({\n  props: args,\n})"
                 }
             ],
             "projects/ui-lib/src/lib/components/custom-comp/custom-comp.stories.ts": [
@@ -923,12 +923,12 @@
                     "defaultValue": "(args: CustomCompComponent) => ({\n  props: args,\n})"
                 }
             ],
-            "projects/ui-lib/src/lib/components/navbar/navbar.stories.ts": [
+            "projects/ui-lib/src/lib/components/input/input.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ui-lib/src/lib/components/navbar/navbar.stories.ts",
+                    "file": "projects/ui-lib/src/lib/components/input/input.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -938,11 +938,11 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ui-lib/src/lib/components/navbar/navbar.stories.ts",
+                    "file": "projects/ui-lib/src/lib/components/input/input.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<NavbarComponent>",
-                    "defaultValue": "(args: NavbarComponent) => ({\n  props: args,\n})"
+                    "type": "Story<InputComponent>",
+                    "defaultValue": "(args: InputComponent) => ({\n  props: args,\n})"
                 }
             ],
             "stories/Button.stories.ts": [
@@ -997,38 +997,6 @@
                     "defaultValue": "(args: Button) => ({\n  props: args,\n})"
                 }
             ],
-            "stories/Page.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Page>",
-                    "defaultValue": "(args: Page) => ({\n  props: args,\n})"
-                }
-            ],
             "stories/Header.stories.ts": [
                 {
                     "name": "LoggedIn",
@@ -1059,6 +1027,38 @@
                     "deprecationMessage": "",
                     "type": "Story<Header>",
                     "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+                }
+            ],
+            "stories/Page.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Page>",
+                    "defaultValue": "(args: Page) => ({\n  props: args,\n})"
                 }
             ]
         },

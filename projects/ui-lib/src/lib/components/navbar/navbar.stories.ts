@@ -1,7 +1,7 @@
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { NavbarComponent } from './navbar.component';
 // import { MatSliderModule } from '@angular/material/slider';
-// import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 export default {
@@ -11,7 +11,7 @@ export default {
     moduleMetadata({
       imports: [
         // MatSliderModule,
-        // MatButtonToggleModule,
+        MatButtonToggleModule,
         BrowserAnimationsModule],
     }),
   ],

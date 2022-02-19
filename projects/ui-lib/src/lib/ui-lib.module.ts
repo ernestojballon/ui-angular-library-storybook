@@ -3,6 +3,7 @@ import { ButtonComponentComponent } from './components/button-component/button-c
 import { InputComponent } from './components/input/input.component';
 import { CustomCompComponent } from './components/custom-comp/custom-comp.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
@@ -12,12 +13,14 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
+    MatButtonToggleModule
   ],
   exports: [
     ButtonComponentComponent,
     InputComponent,
     CustomCompComponent,
-    NavbarComponent
+    NavbarComponent,
+    MatButtonToggleModule
   ]
 })
 export class UiLibModule { }
