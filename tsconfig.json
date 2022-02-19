@@ -24,8 +24,9 @@
     ],
     "paths": {
       "ui-lib": [
-        "dist/ui-lib/ui-lib",
-        "dist/ui-lib"
+        // "dist/ui-lib/ui-lib",
+        // "dist/ui-lib",
+        "projects/ui-lib/src/public-api"
       ]
     }
   },
@@ -34,5 +35,5 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
 }

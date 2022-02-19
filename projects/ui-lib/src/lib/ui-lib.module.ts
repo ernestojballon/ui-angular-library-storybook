@@ -1,16 +1,23 @@
 import { NgModule } from '@angular/core';
-import { UiLibComponent } from './ui-lib.component';
-
-
+import { ButtonComponentComponent } from './components/button-component/button-component.component';
+import { InputComponent } from './components/input/input.component';
+import { CustomCompComponent } from './components/custom-comp/custom-comp.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
-    UiLibComponent
+    ButtonComponentComponent,
+    InputComponent,
+    CustomCompComponent,
+    NavbarComponent
   ],
   imports: [
   ],
   exports: [
-    UiLibComponent
+    ButtonComponentComponent,
+    InputComponent,
+    CustomCompComponent,
+    NavbarComponent
   ]
 })
 export class UiLibModule { }
