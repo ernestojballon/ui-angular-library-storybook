@@ -21,14 +21,5 @@ Run `npm run test`
 Run `npm i file:../mf-component-library/dist/ui-lib`and add to the global styles.scss:
 `@import "../node_modules/ui-lib/_ui-lib.styles.scss";`
 
-Add the commented code to tsconfig.json file from target project.
-
-<!--
-"compilerOptions": {
-    ...​
-    "paths": { ​
-            "@angular/*": [ "./node_modules/@angular/*" ],​
-            "my-lib": [ "../my-lib/projects/my-lib/src/public-api" ]
-    }​
-    ...
-} -->
+Add the followed code to tsconfig.json file from target project.
+` "compilerOptions": { ...​ "paths": { ​ "@angular/*": [ "./node_modules/@angular/*" ],​ "my-lib": [ "../my-lib/projects/my-lib/src/public-api" ] }​ ... }`
