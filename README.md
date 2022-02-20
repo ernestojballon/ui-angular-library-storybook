@@ -4,24 +4,31 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Storybook 6.4.19
+Run `npm run storybook` to start the development server
+on localhost:9000
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+`npm run build:lib` to build the library.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm run test`
 
-## Running end-to-end tests
+## Using the library from projects on the one-repo setup
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Run `npm i file:../mf-component-library/dist/ui-lib`and add to the global styles.scss:
+`@import "../node_modules/ui-lib/_ui-lib.styles.scss";`
 
-## Further help
+Add the commented code to tsconfig.json file from target project.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<!--
+"compilerOptions": {
+    ...​
+    "paths": { ​
+            "@angular/*": [ "./node_modules/@angular/*" ],​
+            "my-lib": [ "../my-lib/projects/my-lib/src/public-api" ]
+    }​
+    ...
+} -->

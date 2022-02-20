@@ -1,4 +1,5 @@
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
+import { AngularMaterialModules } from '../../angular-material/angular-material.module';
 import { CustomCompComponent } from './custom-comp.component';
 
 
@@ -7,7 +8,7 @@ export default {
   component: CustomCompComponent,
   decorators: [
     moduleMetadata({
-      imports: [],
+      imports: [AngularMaterialModules],
     }),
   ],
 } as Meta;

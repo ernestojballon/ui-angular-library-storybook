@@ -147,7 +147,7 @@
         {
             "name": "ButtonComponentComponent",
             "id": "component-ButtonComponentComponent-1bb49737acc4d048cf24de7336dc3f6f7a0f465a1bfdc3f87c4cfaccdf326a0088016615785bcee9113662f907a81d511b1f50b61b3824fac2d96977c89f76aa",
-            "file": "projects/ui-lib/src/lib/components/button-component/button-component.component.ts",
+            "file": "projects/ui-lib/src/lib/atoms/button-component/button-component.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -198,7 +198,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": ".button {\n  width: 250px;\n}\n",
                     "styleUrl": "./button-component.component.css"
                 }
             ],
@@ -214,12 +214,12 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<button >{{text}}</button>"
+            "templateData": "<button class=\"button\" >{{text}}</button>\n<button mat-button>Basic</button>"
         },
         {
             "name": "CustomCompComponent",
             "id": "component-CustomCompComponent-6be07f0ab32e3e4e06eb3c90dbbd82529027a5473587873882d8fe6d1bcbe5b19555daace0ed12fbe564d04fa3698a3f3de5844be5109e5bd0095181285b65d3",
-            "file": "projects/ui-lib/src/lib/components/custom-comp/custom-comp.component.ts",
+            "file": "projects/ui-lib/src/lib/atoms/custom-comp/custom-comp.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -276,7 +276,69 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div>\n    this will be a card\n</div>"
+            "templateData": "<mat-card>Simple card</mat-card>\n"
+        },
+        {
+            "name": "DatepickerComponent",
+            "id": "component-DatepickerComponent-df7489df1a11c875f460cae624c9e40190efdf7ca0ebecb8eef9fd174384aab2cc9576fbe2c1493a8de04bf22f0dc19baf45233dea45aaa8d82220a9a343fbb3",
+            "file": "projects/ui-lib/src/lib/atoms/datepicker/datepicker.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-datepicker",
+            "styleUrls": [
+                "./datepicker.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./datepicker.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-datepicker',\n  templateUrl: './datepicker.component.html',\n  styleUrls: ['./datepicker.component.css']\n})\nexport class DatepickerComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./datepicker.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<mat-form-field appearance=\"fill\">\n    <mat-label>Choose a date</mat-label>\n    <input matInput [matDatepicker]=\"picker\">\n    <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n    <mat-datepicker #picker></mat-datepicker>\n  </mat-form-field>\n  \n"
         },
         {
             "name": "HeaderComponent",
@@ -354,7 +416,7 @@
         {
             "name": "InputComponent",
             "id": "component-InputComponent-a55fc4964291dba25d8f3c39edd8f248963671d336c07603b84d4f906ef281748f77964e31784c4dc939a5d0d5ea9dde7491f23032b4a019f78f6320991ebca3",
-            "file": "projects/ui-lib/src/lib/components/input/input.component.ts",
+            "file": "projects/ui-lib/src/lib/atoms/input/input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -416,7 +478,7 @@
         {
             "name": "NavbarComponent",
             "id": "component-NavbarComponent-92889ac725c129fe57e2aafa7af4b5f7ad54d281621a70bb0521fb106bf6fed96400e107dce9a2ce1fd36933f27e6483928bd35a0c8afd7ec910be7efc461bb7",
-            "file": "projects/ui-lib/src/lib/components/navbar/navbar.component.ts",
+            "file": "projects/ui-lib/src/lib/atoms/navbar/navbar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -558,14 +620,50 @@
     ],
     "modules": [
         {
-            "name": "UiLibModule",
-            "id": "module-UiLibModule-48b033bb389ccdadc0284b7b942b86adf09f1deda68831cd67664e710735aff72cc1c833d7e8dbbbbf0ca6c80f7da510fcb7b60dac37a2aaebc1e4f3c18577b7",
+            "name": "AngularMaterialModules",
+            "id": "module-AngularMaterialModules-73689211032153f730fd65705cbdcf5dd08e276667930a9ff09e0a179ff05a85ff3874ecd59baf0ba31aabaeb1b9b3784c5582021525e00305105aa18b4061e7",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "projects/ui-lib/src/lib/ui-lib.module.ts",
+            "file": "projects/ui-lib/src/lib/angular-material/angular-material.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { ButtonComponentComponent } from './components/button-component/button-component.component';\nimport { InputComponent } from './components/input/input.component';\nimport { CustomCompComponent } from './components/custom-comp/custom-comp.component';\nimport { NavbarComponent } from './components/navbar/navbar.component';\nimport { MatButtonToggleModule } from '@angular/material/button-toggle';\n\n@NgModule({\n  declarations: [\n    ButtonComponentComponent,\n    InputComponent,\n    CustomCompComponent,\n    NavbarComponent\n  ],\n  imports: [\n    MatButtonToggleModule\n  ],\n  exports: [\n    ButtonComponentComponent,\n    InputComponent,\n    CustomCompComponent,\n    NavbarComponent,\n    MatButtonToggleModule\n  ]\n})\nexport class UiLibModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n// Material Form Controls\nimport { MatAutocompleteModule } from '@angular/material/autocomplete';\nimport { MatCheckboxModule } from '@angular/material/checkbox';\nimport { MatDatepickerModule } from '@angular/material/datepicker';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatRadioModule } from '@angular/material/radio';\nimport { MatSelectModule } from '@angular/material/select';\nimport { MatSliderModule } from '@angular/material/slider';\nimport { MatSlideToggleModule } from '@angular/material/slide-toggle';\n// Material Navigation\nimport { MatMenuModule } from '@angular/material/menu';\nimport { MatSidenavModule } from '@angular/material/sidenav';\nimport { MatToolbarModule } from '@angular/material/toolbar';\n// Material Layout\nimport { MatCardModule } from '@angular/material/card';\nimport { MatDividerModule } from '@angular/material/divider';\nimport { MatExpansionModule } from '@angular/material/expansion';\nimport { MatGridListModule } from '@angular/material/grid-list';\nimport { MatListModule } from '@angular/material/list';\nimport { MatStepperModule } from '@angular/material/stepper';\nimport { MatTabsModule } from '@angular/material/tabs';\nimport { MatTreeModule } from '@angular/material/tree';\n// Material Buttons & Indicators\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatButtonToggleModule } from '@angular/material/button-toggle';\nimport { MatBadgeModule } from '@angular/material/badge';\nimport { MatChipsModule } from '@angular/material/chips';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatProgressSpinnerModule } from '@angular/material/progress-spinner';\nimport { MatProgressBarModule } from '@angular/material/progress-bar';\nimport { MatRippleModule } from '@angular/material/core';\n// Material Popups & Modals\nimport { MatBottomSheetModule } from '@angular/material/bottom-sheet';\nimport { MatDialogModule } from '@angular/material/dialog';\nimport { MatSnackBarModule } from '@angular/material/snack-bar';\nimport { MatTooltipModule } from '@angular/material/tooltip';\n// Material Data tables\nimport { MatPaginatorModule } from '@angular/material/paginator';\nimport { MatSortModule } from '@angular/material/sort';\nimport { MatTableModule } from '@angular/material/table';\nimport {MatNativeDateModule} from '@angular/material/core';\nimport {BrowserAnimationsModule} from '@angular/platform-browser/animations'\n// import { MatMomentDateModule } from \"@angular/material-moment-adapter\";\n\nconst MaterialModules = [\n    MatAutocompleteModule,\n    MatCheckboxModule,\n    MatDatepickerModule,\n    MatFormFieldModule,\n    MatInputModule,\n    MatRadioModule,\n    MatSelectModule,\n    MatSliderModule,\n    MatSlideToggleModule,\n    MatMenuModule,\n    MatSidenavModule,\n    MatToolbarModule,\n    MatCardModule,\n    MatDividerModule,\n    MatExpansionModule,\n    MatGridListModule,\n    MatListModule,\n    MatStepperModule,\n    MatTabsModule,\n    MatTreeModule,\n    MatButtonModule,\n    MatButtonToggleModule,\n    MatBadgeModule,\n    MatChipsModule,\n    MatIconModule,\n    MatProgressSpinnerModule,\n    MatProgressBarModule,\n    MatRippleModule,\n    MatBottomSheetModule,\n    MatDialogModule,\n    MatSnackBarModule,\n    MatTooltipModule,\n    MatPaginatorModule,\n    MatSortModule,\n    MatTableModule,\n    MatNativeDateModule,\n    BrowserAnimationsModule\n]\n@NgModule({\n  declarations: [],\n  imports: [\n    CommonModule,\n    ...MaterialModules\n  ],\n  exports: [\n    ...MaterialModules\n  ]\n})\nexport class AngularMaterialModules { }",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "UiLibModule",
+            "id": "module-UiLibModule-b8f4e86ef50f46e3df343a18e88827184f4aa30f7fcea1c3feee16f6ad309aa9665f2cbae16639ae479a0075a9ed3bcf2130af201441621a620bdb4614bef342",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ui-lib/src/ui-lib.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { AngularMaterialModules } from './lib/angular-material/angular-material.module';\n\nimport { ButtonComponentComponent } from './lib/atoms/button-component/button-component.component';\nimport { InputComponent } from './lib/atoms/input/input.component';\nimport { CustomCompComponent } from './lib/atoms/custom-comp/custom-comp.component';\nimport { NavbarComponent } from './lib/atoms/navbar/navbar.component';\nimport { DatepickerComponent } from './lib/atoms/datepicker/datepicker.component';\n\n@NgModule({\n  declarations: [\n    ButtonComponentComponent,\n    InputComponent,\n    CustomCompComponent,\n    NavbarComponent,\n    DatepickerComponent\n  ],\n  imports: [\n    AngularMaterialModules\n  ],\n  exports: [\n    ButtonComponentComponent,\n    InputComponent,\n    CustomCompComponent,\n    NavbarComponent,\n    DatepickerComponent\n  ]\n})\nexport class UiLibModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -581,6 +679,9 @@
                             "name": "CustomCompComponent"
                         },
                         {
+                            "name": "DatepickerComponent"
+                        },
+                        {
                             "name": "InputComponent"
                         },
                         {
@@ -590,7 +691,11 @@
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "AngularMaterialModules"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
@@ -600,6 +705,9 @@
                         },
                         {
                             "name": "CustomCompComponent"
+                        },
+                        {
+                            "name": "DatepickerComponent"
                         },
                         {
                             "name": "InputComponent"
@@ -636,7 +744,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui-lib/src/lib/components/button-component/my-lib.stories.ts",
+                "file": "projects/ui-lib/src/lib/atoms/custom-comp/custom-comp.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -646,7 +754,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui-lib/src/lib/components/navbar/navbar.stories.ts",
+                "file": "projects/ui-lib/src/lib/atoms/datepicker/datepicker.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -656,7 +764,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui-lib/src/lib/components/custom-comp/custom-comp.stories.ts",
+                "file": "projects/ui-lib/src/lib/atoms/input/input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -666,7 +774,17 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui-lib/src/lib/components/input/input.stories.ts",
+                "file": "projects/ui-lib/src/lib/atoms/navbar/navbar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui-lib/src/lib/atoms/button-component/my-lib.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -723,6 +841,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "MaterialModules",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui-lib/src/lib/angular-material/angular-material.module.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n    MatAutocompleteModule,\n    MatCheckboxModule,\n    MatDatepickerModule,\n    MatFormFieldModule,\n    MatInputModule,\n    MatRadioModule,\n    MatSelectModule,\n    MatSliderModule,\n    MatSlideToggleModule,\n    MatMenuModule,\n    MatSidenavModule,\n    MatToolbarModule,\n    MatCardModule,\n    MatDividerModule,\n    MatExpansionModule,\n    MatGridListModule,\n    MatListModule,\n    MatStepperModule,\n    MatTabsModule,\n    MatTreeModule,\n    MatButtonModule,\n    MatButtonToggleModule,\n    MatBadgeModule,\n    MatChipsModule,\n    MatIconModule,\n    MatProgressSpinnerModule,\n    MatProgressBarModule,\n    MatRippleModule,\n    MatBottomSheetModule,\n    MatDialogModule,\n    MatSnackBarModule,\n    MatTooltipModule,\n    MatPaginatorModule,\n    MatSortModule,\n    MatTableModule,\n    MatNativeDateModule,\n    BrowserAnimationsModule\n]"
+            },
+            {
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -765,21 +893,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<Button>",
                 "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Header>",
+                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -795,27 +923,7 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui-lib/src/lib/components/button-component/my-lib.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonComponentComponent>",
-                "defaultValue": "(args: ButtonComponentComponent) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ui-lib/src/lib/components/navbar/navbar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<NavbarComponent>",
-                "defaultValue": "(args: NavbarComponent) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ui-lib/src/lib/components/custom-comp/custom-comp.stories.ts",
+                "file": "projects/ui-lib/src/lib/atoms/custom-comp/custom-comp.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<CustomCompComponent>",
@@ -825,11 +933,41 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ui-lib/src/lib/components/input/input.stories.ts",
+                "file": "projects/ui-lib/src/lib/atoms/datepicker/datepicker.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<DatepickerComponent>",
+                "defaultValue": "(args: DatepickerComponent) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui-lib/src/lib/atoms/input/input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<InputComponent>",
                 "defaultValue": "(args: InputComponent) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui-lib/src/lib/atoms/navbar/navbar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<NavbarComponent>",
+                "defaultValue": "(args: NavbarComponent) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ui-lib/src/lib/atoms/button-component/my-lib.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonComponentComponent>",
+                "defaultValue": "(args: ButtonComponentComponent) => ({\n  props: args,\n})"
             }
         ],
         "functions": [],
@@ -857,12 +995,12 @@
                     "type": "literal type"
                 }
             ],
-            "projects/ui-lib/src/lib/components/button-component/my-lib.stories.ts": [
+            "projects/ui-lib/src/lib/atoms/custom-comp/custom-comp.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ui-lib/src/lib/components/button-component/my-lib.stories.ts",
+                    "file": "projects/ui-lib/src/lib/atoms/custom-comp/custom-comp.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -872,63 +1010,19 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ui-lib/src/lib/components/button-component/my-lib.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonComponentComponent>",
-                    "defaultValue": "(args: ButtonComponentComponent) => ({\n  props: args,\n})"
-                }
-            ],
-            "projects/ui-lib/src/lib/components/navbar/navbar.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui-lib/src/lib/components/navbar/navbar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui-lib/src/lib/components/navbar/navbar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<NavbarComponent>",
-                    "defaultValue": "(args: NavbarComponent) => ({\n  props: args,\n})"
-                }
-            ],
-            "projects/ui-lib/src/lib/components/custom-comp/custom-comp.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui-lib/src/lib/components/custom-comp/custom-comp.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ui-lib/src/lib/components/custom-comp/custom-comp.stories.ts",
+                    "file": "projects/ui-lib/src/lib/atoms/custom-comp/custom-comp.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<CustomCompComponent>",
                     "defaultValue": "(args: CustomCompComponent) => ({\n  props: args,\n})"
                 }
             ],
-            "projects/ui-lib/src/lib/components/input/input.stories.ts": [
+            "projects/ui-lib/src/lib/atoms/datepicker/datepicker.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ui-lib/src/lib/components/input/input.stories.ts",
+                    "file": "projects/ui-lib/src/lib/atoms/datepicker/datepicker.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -938,11 +1032,77 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ui-lib/src/lib/components/input/input.stories.ts",
+                    "file": "projects/ui-lib/src/lib/atoms/datepicker/datepicker.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<DatepickerComponent>",
+                    "defaultValue": "(args: DatepickerComponent) => ({\n  props: args,\n})"
+                }
+            ],
+            "projects/ui-lib/src/lib/atoms/input/input.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui-lib/src/lib/atoms/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui-lib/src/lib/atoms/input/input.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<InputComponent>",
                     "defaultValue": "(args: InputComponent) => ({\n  props: args,\n})"
+                }
+            ],
+            "projects/ui-lib/src/lib/atoms/navbar/navbar.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui-lib/src/lib/atoms/navbar/navbar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui-lib/src/lib/atoms/navbar/navbar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<NavbarComponent>",
+                    "defaultValue": "(args: NavbarComponent) => ({\n  props: args,\n})"
+                }
+            ],
+            "projects/ui-lib/src/lib/atoms/button-component/my-lib.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui-lib/src/lib/atoms/button-component/my-lib.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui-lib/src/lib/atoms/button-component/my-lib.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonComponentComponent>",
+                    "defaultValue": "(args: ButtonComponentComponent) => ({\n  props: args,\n})"
                 }
             ],
             "stories/Button.stories.ts": [
@@ -1060,6 +1220,18 @@
                     "type": "Story<Page>",
                     "defaultValue": "(args: Page) => ({\n  props: args,\n})"
                 }
+            ],
+            "projects/ui-lib/src/lib/angular-material/angular-material.module.ts": [
+                {
+                    "name": "MaterialModules",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ui-lib/src/lib/angular-material/angular-material.module.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n    MatAutocompleteModule,\n    MatCheckboxModule,\n    MatDatepickerModule,\n    MatFormFieldModule,\n    MatInputModule,\n    MatRadioModule,\n    MatSelectModule,\n    MatSliderModule,\n    MatSlideToggleModule,\n    MatMenuModule,\n    MatSidenavModule,\n    MatToolbarModule,\n    MatCardModule,\n    MatDividerModule,\n    MatExpansionModule,\n    MatGridListModule,\n    MatListModule,\n    MatStepperModule,\n    MatTabsModule,\n    MatTreeModule,\n    MatButtonModule,\n    MatButtonToggleModule,\n    MatBadgeModule,\n    MatChipsModule,\n    MatIconModule,\n    MatProgressSpinnerModule,\n    MatProgressBarModule,\n    MatRippleModule,\n    MatBottomSheetModule,\n    MatDialogModule,\n    MatSnackBarModule,\n    MatTooltipModule,\n    MatPaginatorModule,\n    MatSortModule,\n    MatTableModule,\n    MatNativeDateModule,\n    BrowserAnimationsModule\n]"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -1072,7 +1244,17 @@
         "status": "low",
         "files": [
             {
-                "filePath": "projects/ui-lib/src/lib/components/button-component/button-component.component.ts",
+                "filePath": "projects/ui-lib/src/lib/angular-material/angular-material.module.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MaterialModules",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui-lib/src/lib/atoms/button-component/button-component.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonComponentComponent",
@@ -1081,7 +1263,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ui-lib/src/lib/components/button-component/my-lib.stories.ts",
+                "filePath": "projects/ui-lib/src/lib/atoms/button-component/my-lib.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1091,7 +1273,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ui-lib/src/lib/components/button-component/my-lib.stories.ts",
+                "filePath": "projects/ui-lib/src/lib/atoms/button-component/my-lib.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1101,7 +1283,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ui-lib/src/lib/components/custom-comp/custom-comp.component.ts",
+                "filePath": "projects/ui-lib/src/lib/atoms/custom-comp/custom-comp.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "CustomCompComponent",
@@ -1110,7 +1292,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ui-lib/src/lib/components/custom-comp/custom-comp.stories.ts",
+                "filePath": "projects/ui-lib/src/lib/atoms/custom-comp/custom-comp.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1120,7 +1302,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ui-lib/src/lib/components/custom-comp/custom-comp.stories.ts",
+                "filePath": "projects/ui-lib/src/lib/atoms/custom-comp/custom-comp.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1130,7 +1312,36 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ui-lib/src/lib/components/input/input.component.ts",
+                "filePath": "projects/ui-lib/src/lib/atoms/datepicker/datepicker.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DatepickerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui-lib/src/lib/atoms/datepicker/datepicker.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui-lib/src/lib/atoms/datepicker/datepicker.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui-lib/src/lib/atoms/input/input.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "InputComponent",
@@ -1139,7 +1350,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ui-lib/src/lib/components/input/input.stories.ts",
+                "filePath": "projects/ui-lib/src/lib/atoms/input/input.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1149,7 +1360,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ui-lib/src/lib/components/input/input.stories.ts",
+                "filePath": "projects/ui-lib/src/lib/atoms/input/input.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1159,7 +1370,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ui-lib/src/lib/components/navbar/navbar.component.ts",
+                "filePath": "projects/ui-lib/src/lib/atoms/navbar/navbar.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "NavbarComponent",
@@ -1168,7 +1379,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ui-lib/src/lib/components/navbar/navbar.stories.ts",
+                "filePath": "projects/ui-lib/src/lib/atoms/navbar/navbar.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1178,7 +1389,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ui-lib/src/lib/components/navbar/navbar.stories.ts",
+                "filePath": "projects/ui-lib/src/lib/atoms/navbar/navbar.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

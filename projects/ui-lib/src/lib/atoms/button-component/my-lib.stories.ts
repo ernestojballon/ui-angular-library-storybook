@@ -1,12 +1,13 @@
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { ButtonComponentComponent } from './button-component.component';
+import { AngularMaterialModules } from '../../angular-material/angular-material.module';
 
 export default {
   title: 'Atoms/ButtonComponent',
   component: ButtonComponentComponent,
   decorators: [
     moduleMetadata({
-      imports: [],
+      imports: [ AngularMaterialModules ],
     }),
   ],
 } as Meta;

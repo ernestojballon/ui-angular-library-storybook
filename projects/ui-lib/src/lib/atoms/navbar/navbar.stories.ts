@@ -1,8 +1,6 @@
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { NavbarComponent } from './navbar.component';
-// import { MatSliderModule } from '@angular/material/slider';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AngularMaterialModules } from '../../angular-material/angular-material.module';
 
 export default {
   title: 'Atoms/Navbar',
@@ -10,9 +8,7 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [
-        // MatSliderModule,
-        MatButtonToggleModule,
-        BrowserAnimationsModule],
+        AngularMaterialModules],
     }),
   ],
 } as Meta;
